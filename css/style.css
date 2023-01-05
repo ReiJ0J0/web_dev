@@ -390,6 +390,8 @@ ul.right_icon li img {
      margin-right: 30px;
 }
 
+
+/*D2 ANG CHANGE COLOR NG BUTTON*/
 .order {
      padding-top: 2px;
      float: right;
@@ -397,7 +399,7 @@ ul.right_icon li img {
      font-size: 14px !important;
      color: #fff !important;
      height: 28px;
-     width: 100%;
+     width: 50%;
      background-color: #183661;
      display: block;
      text-align: center;
@@ -512,7 +514,7 @@ position: absolute;
      font-size: 33px;
      margin-bottom: 50px;
 }
-
+/*Malaking button */
 .text-bg .read_more {
      font-weight: 500;
      background: #1d37fd;
@@ -1039,6 +1041,58 @@ margin: 0 15px 20px 15px;
 #request *::placeholder {
      color: #183661;
      opacity: 1;
+}
+
+.logIn{
+
+     color: #183661;
+     font-family: 'Righteous', cursive;
+     font-size: 55px;
+     text-align: center;
+}
+
+.the_box{
+     box-sizing: content-box;
+     outline: 8px ridge rgba(206, 194, 211, 0.6);
+     border-radius: 2rem;
+     width: 500px;
+     margin: auto;
+}
+
+.simple_text {
+
+     color:#16130a;
+     text-align: center;
+     font-size: medium;
+
+
+}
+.filup{
+     box-sizing: content-box;
+     outline: 8px ridge rgba(206, 194, 211, 0.6);
+     border-radius: 2rem;
+     width: 500px;
+     color:#16130a;
+     text-align: center;
+     margin: auto;
+}
+
+.sign {
+     margin: auto;
+     padding-top: 2px;
+     max-width: 120px;
+     font-size: 14px !important;
+     color: #fff !important;
+     height: 28px;
+     width: 50%;
+     background-color: #183661;
+     display: block;
+     text-align: auto;
+     border-radius: 40px;
+}
+
+.sign:hover {
+     background-color: #f2c119;
 }
 
 
