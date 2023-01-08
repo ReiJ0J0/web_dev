@@ -13,18 +13,17 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-    $submit = $_POST['submit'];
-    $id = $_POST['id'];
-    $product =$_POST['product'];
-    $num_prod =$_POST['num_prod'];
-    $type =$_POST['type'];
+    
+    $id= $_GET['id'];
 
-$query = "INSERT INTO inventory (id, product, num_prod, type) VALUES ('$id','$product', '$num_prod', '$type')";
+
+
+$query = "DELETE FROM `inventory` WHERE id = 1,2 ";
 $result = mysqli_query($conn, $query);
 
 if ($result) {
     // Sign in successful
-    header('location: inventory.php? msg:New Record Inserted sucessfully! ');;
+    header('location: inventory.php? msg:New Record Deleted sucessfully! ');;
 } else {
     // Sign in failed
     echo "Sign in failed: " . mysqli_error($conn);

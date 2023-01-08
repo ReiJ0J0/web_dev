@@ -156,10 +156,12 @@
       <!-- about section -->
 
       <div class="col-md-4">
-        <a href="Add_db.php" class="sign" >Add New Data</a>
+        <a href="Add_db.php " class="send_btn" >Add New Data</a>
 
       </div>
-      <?php
+
+      <div class="col-md-12">    
+        <?php
             $db = new PDO('mysql:host=localhost;dbname=test', 'root', '');
             $stmt = $db->query('SELECT id, product, num_prod, type  FROM inventory');
 
@@ -171,10 +173,17 @@
             echo '<td>' . $row['product'] . '</td>';
             echo '<td>' . $row['num_prod'] . '</td>';
             echo '<td>' . $row['type'] . '</td>';
+            echo '<td>' . 
+                            '<a href="updatesInv.php"class = "sign"> Update</a>
+                            <h1></h1>
+                            <a href="delete.php"class = "sign"> Delete</a>'
+                            . '</td>';
             echo '</tr>';
             }
             echo '</table>';
         ?>
+      </div>
+      
 
 
 

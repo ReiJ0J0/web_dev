@@ -19,7 +19,7 @@ if (!$conn) {
     $num_prod =$_POST['num_prod'];
     $type =$_POST['type'];
 
-$query = "INSERT INTO inventory (id, product, num_prod, type) VALUES ('$id','$product', '$num_prod', '$type')";
+$query = "  UPDATE `inventory` SET `id`='$id',`product`='$product',`num_prod`='$num_prod',`type`='$type' WHERE 1 ;
 $result = mysqli_query($conn, $query);
 
 if ($result) {
