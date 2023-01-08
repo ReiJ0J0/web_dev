@@ -1,5 +1,9 @@
 
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -155,26 +159,24 @@
       </div>
       <!-- about section -->
 
-      <div class="col-md-4">
-        <a href="Add_db.php" class="sign" >Add New Data</a>
+     <div class="col-md-4">
+        <div class="rows">
+                        <form action="add.php" method="post" class = "main_form">
+                    
+                        <label for="product" > </label><br>
+                    <input class="contactus"  placeholder="Product" type="text" id = "product" name="product"><br> 
+                    <label for="num_prod"></label><br>
+                    <input class="contactus" placeholder="No. of Products" type="number" id = "num_prod" name="num_prod"> <br>
+                    <label for="type"></label><br>
+                    <input class="contactus" placeholder="Type" type="text" id = "type" name="type"> <br>   
+                    <input type="submit" class = "send_btn" value="Submit">
+                    <a href="inventory.php"><input type="#" class = "send_btn" value="Cancel"></a>
+                </form> 
+        </div>
+     </div>
+      
+      
 
-      </div>
-      <?php
-            $db = new PDO('mysql:host=localhost;dbname=test', 'root', '');
-            $stmt = $db->query('SELECT id, product, num_prod, type  FROM inventory');
-
-            echo '<table class="table">';
-            echo '<tr><th scope="col">ID</th><th scope="col">Product</th><th scope="col">No. of Products</th> <th scope="col">Type</th></tr>';
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<tr>';
-            echo '<td>' . $row['id'] . '</td>';
-            echo '<td>' . $row['product'] . '</td>';
-            echo '<td>' . $row['num_prod'] . '</td>';
-            echo '<td>' . $row['type'] . '</td>';
-            echo '</tr>';
-            }
-            echo '</table>';
-        ?>
 
 
 
