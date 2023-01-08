@@ -32,5 +32,10 @@ if ($result) {
     echo "Sign in failed: " . mysqli_error($conn);
 }
 
+
+
 mysqli_close($conn);
+
+
+
 ?>
