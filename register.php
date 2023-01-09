@@ -26,7 +26,7 @@ $result = mysqli_query($conn, $query);
 
 if ($result) {
     // Sign in successful
-    echo '<p>Successfull log In</p>';
+    header('location: login.html? msg:New Account Loged In sucessfully! ');;
 } else {
     // Sign in failed
     echo "Sign in failed: " . mysqli_error($conn);

@@ -156,13 +156,17 @@
       <!-- about section -->
 
       <div class="col-md-4">
-        <a href="Add_db.php" class="sign" >Add New Data</a>
+        <a href="Add_db.php " class="send_btn" >Add New Data</a>
 
       </div>
-      <?php
+
+      <div class="col-md-12">    
+        <?php
+            
             $db = new PDO('mysql:host=localhost;dbname=test', 'root', '');
             $stmt = $db->query('SELECT id, product, num_prod, type  FROM inventory');
-
+             
+            
             echo '<table class="table">';
             echo '<tr><th scope="col">ID</th><th scope="col">Product</th><th scope="col">No. of Products</th> <th scope="col">Type</th></tr>';
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -171,12 +175,16 @@
             echo '<td>' . $row['product'] . '</td>';
             echo '<td>' . $row['num_prod'] . '</td>';
             echo '<td>' . $row['type'] . '</td>';
+            echo "<td><input type='submit' name='update' value='Update'></td>";
+            echo "<td> <input type='submit' name='Delete' value='Delete'></td>";
             echo '</tr>';
             }
             echo '</table>';
         ?>
-
-
+      </div>
+      
+            
+           
 
       <!-- end about section -->
       <!--  footer -->

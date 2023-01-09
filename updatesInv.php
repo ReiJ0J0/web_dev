@@ -156,18 +156,35 @@
 
      <div class="col-md-4">
         <div class="rows">
-                        <form action="add.php" method="post" class = "main_form">
-                    
+                        <form action="update.php" method="post" class = "main_form">
+                     <?php
+                     $host = 'localhost';
+                     $user = 'root';
+                     $pass = '';
+                     $dbname = 'test';
+                     $conn = mysqli_connect($host, $user, $pass, $dbname);
+                     
+                     // Check connection
+                     if (!$conn) {
+                         die("Connection failed: " . mysqli_connect_error());
+                     } 
+                     $id = $_GET['id'];
+                     $sql = "SELECT * FROM `inventory` WHERE 1";
+                     $result = mysqli_query($conn, $sql);
+                     $row = mysql_fetch_assoc($result);
+                     ?>
                         <label for="id" > </label><br>
-                    <input class="contactus"  placeholder="ID" type="number" id = "id" name="id"><br> 
+                    <input class="contactus"  value="<?php echo $row['id']?>" type="number" id = "id" name="id"><br>
+
                         <label for="product" > </label><br>
-                    <input class="contactus"  placeholder="Product" type="text" id = "product" name="product"><br> 
+                    <input class="contactus"  value="<?php echo $row['product']?>" type="text" id = "product" name="product"><br> 
                     <label for="num_prod"></label><br>
-                    <input class="contactus" placeholder="No. of Products" type="number" id = "num_prod" name="num_prod"> <br>
+                    <input class="contactus" value="<?php echo $row['num_prod']?>" type="number" id = "num_prod" name="num_prod"> <br>
                     <label for="type"></label><br>
-                    <input class="contactus" placeholder="Type" type="text" id = "type" name="type"> <br>   
+                    <input class="contactus" value="<?php echo $row['type']?>" type="text" id = "type" name="type"> <br>   
                     <input type="submit" class = "send_btn" value="Submit">
                     <a href="inventory.php"><input type="#" class = "send_btn" value="Cancel"></a>
+                    
                 </form> 
         </div>
      </div>
