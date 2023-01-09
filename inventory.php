@@ -117,11 +117,7 @@
                                  <li class="nav-item">
                                     <a class="nav-link" href="inventory.php">Inventory </a>
                                  </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="products.html">User</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="tech.html">Product List</a>
+                                
                                  </li>
                               </ul>
                            </div>
