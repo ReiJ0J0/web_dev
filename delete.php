@@ -13,25 +13,21 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-    
-    $id= $_GET['id'];
 
+if (isset($_GET['Delete'])) {
+    // Get the delete id
+    $id = $_GET['Delete'];
 
+    // Delete the record
+    $sql = "DELETE FROM inventory WHERE id = $id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
 
-$query = "DELETE FROM `inventory` WHERE id = 1,2 ";
-$result = mysqli_query($conn, $query);
-
-if ($result) {
-    // Sign in successful
-    header('location: inventory.php? msg:New Record Deleted sucessfully! ');;
-} else {
-    // Sign in failed
-    echo "Sign in failed: " . mysqli_error($conn);
+    // Redirect to the index page
+    header("Location: index.php");
+    exit();
 }
-
-
-
-mysqli_close($conn);
 
 
 
